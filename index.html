@@ -182,8 +182,82 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; back
 .glossary-term { font-size: 14px; font-weight: 600; color: var(--tr-dark); margin-bottom: 4px; }
 .glossary-def { font-size: 13px; color: var(--tr-gray-600); line-height: 1.5; }
 .glossary-formula { font-size: 12px; color: var(--tr-gray-500); font-family: monospace; background: var(--tr-gray-100); padding: 4px 8px; border-radius: 4px; margin-top: 4px; display: inline-block; }
-@media (max-width: 1200px) { .kpi-grid, .charts-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 768px) { .kpi-grid, .charts-grid, .rhr-comparison, .comparison-grid { grid-template-columns: 1fr; } .scorecard-grid { grid-template-columns: 1fr; } .filters-bar { flex-direction: column; align-items: stretch; } .filter-reset { margin-left: 0; margin-top: 8px; } }
+@media (max-width: 1200px) {
+    .kpi-grid, .charts-grid { grid-template-columns: repeat(2, 1fr); }
+    .comparison-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    .header { padding: 0 12px; height: 56px; }
+    .header-logo { font-size: 18px; }
+    .header-divider, .header-title, .header-date { display: none; }
+    .header-user span { display: none; }
+    .nav { padding: 0 8px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .nav-item { padding: 12px 14px; font-size: 13px; white-space: nowrap; }
+    .main-container { padding: 12px; }
+    .filters-bar { flex-direction: column; align-items: stretch; padding: 12px; gap: 12px; }
+    .filter-group { width: 100%; }
+    .filter-select { width: 100%; min-width: unset; }
+    .filter-reset, .glossary-btn { width: 100%; margin-left: 0; margin-top: 4px; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 16px; }
+    .kpi-card { padding: 12px; }
+    .kpi-label { font-size: 10px; margin-bottom: 4px; }
+    .kpi-value { font-size: 22px; }
+    .scorecard-grid { grid-template-columns: 1fr; gap: 12px; }
+    .scorecard-header { padding: 14px; gap: 12px; }
+    .grade-badge { width: 50px; height: 50px; font-size: 24px; }
+    .scorecard-firm { font-size: 16px; }
+    .scorecard-body { padding: 12px 14px; }
+    .scorecard-stats { gap: 12px; }
+    .stat-value { font-size: 18px; }
+    .charts-grid { grid-template-columns: 1fr; gap: 16px; }
+    .chart-container { padding: 14px; }
+    .chart-title { font-size: 13px; margin-bottom: 12px; }
+    .rhr-comparison, .comparison-grid { grid-template-columns: 1fr; gap: 16px; }
+    .rhr-metrics { grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 14px; }
+    .rhr-metric-value { font-size: 28px; }
+    .comparison-selector { gap: 8px; }
+    .firm-checkbox { padding: 6px 10px; font-size: 12px; }
+    .metric-row { flex-direction: column; align-items: flex-start; padding: 12px; }
+    .metric-name { width: 100%; margin-bottom: 8px; }
+    .metric-bars { width: 100%; flex-direction: column; gap: 6px; }
+    .card-header { padding: 12px 14px; }
+    .card-title { font-size: 14px; }
+    .card-body { padding: 12px; }
+    .table-controls { flex-direction: column; gap: 10px; }
+    .search-input { width: 100%; }
+    .export-btn { width: 100%; justify-content: center; }
+    .data-table { font-size: 12px; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .data-table th, .data-table td { padding: 10px 8px; white-space: nowrap; }
+    .pagination { padding: 12px 8px; gap: 4px; }
+    .page-btn { width: 32px; height: 32px; font-size: 12px; }
+    .deep-dive-header { flex-direction: column; padding: 16px; gap: 16px; }
+    .deep-dive-header .grade-badge { width: 80px !important; height: 80px !important; font-size: 48px !important; margin: 0 auto; }
+    .deep-dive-firm { font-size: 22px; text-align: center; }
+    .deep-dive-summary { font-size: 14px; text-align: center; }
+    .grade-breakdown { flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .grade-component { align-items: center; min-width: 80px; }
+    .back-button { width: 100%; justify-content: center; }
+    .modal { margin: 10px; max-width: calc(100% - 20px); max-height: calc(100vh - 20px); border-radius: var(--radius); }
+    .modal-header { padding: 14px 16px; }
+    .modal-title { font-size: 18px; }
+    .modal-body { padding: 16px; }
+    .glossary-item { margin-bottom: 14px; }
+    .glossary-formula { font-size: 11px; word-break: break-all; }
+    .recommendation-box { padding: 14px; margin-top: 16px; }
+    .recommendation-text { font-size: 14px; }
+}
+@media (max-width: 480px) {
+    .kpi-grid { grid-template-columns: 1fr; }
+    .kpi-card { display: flex; justify-content: space-between; align-items: center; }
+    .kpi-label { margin-bottom: 0; }
+    .kpi-value { font-size: 20px; }
+    .rhr-metrics { grid-template-columns: 1fr; }
+    .scorecard-stats { grid-template-columns: 1fr; gap: 8px; }
+    .scorecard-stat { flex-direction: row; justify-content: space-between; align-items: center; }
+    .stat-label { margin-bottom: 0; }
+    .grade-breakdown { gap: 12px; }
+    .component-score { font-size: 16px; }
+}
     </style>
 </head>
 <body>
